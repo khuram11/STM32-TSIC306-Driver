@@ -1,3 +1,7 @@
+
+#define TMP_PIN_HIGH 	(GPIOB->IDR & 1 )
+#define TMP_PIN_LOW   	(!TMP_PIN_HIGH)
+
 void WAIT_FOR_TMP_LOW(const uint32_t Time)
 {
 	while (TMP_PIN_HIGH && ((HAL_GetTick() - Time) < 2000));
